@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <button id="btn">dsada</button>
+</div>
+
+<script src="js/jquery.js"></script>
+<script>
+    // jq函数
+    console.log($,typeof $)
+    console.log(jQuery===$)
+    // jq对象
+    console.log($(),$() instanceof Object)
+
+    // (function (window) {
+    //     var jQuery=function () {
+    //
+    //     }
+    //     window.$=window.jQuery=jQuery
+    // })(window)
+
+    // 参数为函数 当dom加载完成后 执行此回调函数
+    $(function () {
+        // 参数为选择器字符串 查找所有匹配的标签，并将它们封装成jq对象
+        $('#btn').click(function () {
+            // alert(this.innerHTML)
+            // 参数为dom对象 将dom对象封装成jq对象
+            alert($(this).html())
+            // 参数为HTML标签字符串 创建标签对象并封装成jq对象
+            $('<input type="text">').appendTo('div')
+        })
+    })
+
+</script>
+</body>
+</html>

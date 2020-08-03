@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+用户名: <input type="text" id="username">
+<button id="btn">btn</button>
+<script>
+    // 参数为函数 当dom加载完成后，执行此回调函数
+    jQuery(function () {
+        $('#btn').click(function () {
+            var username=$('#username').val()
+            alert(username)
+        })
+    })
+
+</script>
+</body>
+</html>

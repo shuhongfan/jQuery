@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>测试1</button>
+<button>测试2</button>
+<button id="btn3">测试3</button>
+<button>测试3</button>
+<script src="js/jquery-1.10.1.js"></script>
+<script>
+    $(function () {
+        var $buttons=$('button')
+        console.log($buttons.size(),$buttons.length)
+        console.log($buttons[1].innerHTML,$buttons.get(1).innerHTML)
+        $buttons.each(function (index,item) {
+            console.log(index,item,item.innerHTML,this)
+        })
+        $buttons.each(function () {
+            console.log(this,this.innerHTML)
+        })
+        console.log($('#btn3').index())
+
+        // 伪数组 object对象 length属性 数值下标属性
+        console.log($buttons instanceof Array)
+        var weiArr={}
+        weiArr.length=0
+        weiArr[0]='baidu'
+        weiArr.length=1
+        weiArr[1]=123
+        weiArr.length=2
+        for (var i = 0; i < weiArr.length; i++) {
+            var obj=weiArr[i]
+            console.log(i,obj)
+        }
+        console.log(weiArr.forEach,$buttons.forEach)
+        // weiArr.forEach(function (i) {
+        //     console.log(weiArr[i])
+        // })
+        weiArr.push('342')
+    })
+
+</script>
+</body>
+</html>
